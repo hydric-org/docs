@@ -1,5 +1,12 @@
-| Error Code                 | Description                                                    |
-| :------------------------- | :------------------------------------------------------------- |
-| `LIQUIDITY_POOL_NOT_FOUND` | Trying to get data about a liquidity pool that does not exist. |
-
-(... under construction`)
+| Error Code | Status | Title | Description |
+| :--- | :--- | :--- | :--- |
+| `INVALID_BLOCKCHAIN_ADDRESS` | 400 | Invalid Parameters | The provided blockchain identity (address/chain id pair) is malformed or refers to an unsupported network. |
+| `INVALID_PAGINATION_CURSOR` | 400 | Invalid Parameters | The pagination cursor is malformed or has expired. Request a new starting page to reset. |
+| `INVALID_POOL_ADDRESS` | 400 | Invalid Parameters | The provided pool address is syntactically invalid or does not match the expected format for the target blockchain |
+| `INVALID_PROTOCOL_ID` | 400 | Invalid Parameters | The protocol identifier is not recognized. Protocol IDs must match the hydric slug format (e.g., uniswap-v3). |
+| `LIQUIDITY_POOL_NOT_FOUND` | 404 | Not Found | The requested liquidity pool could not be found. This may occur if the pool is not yet indexed or the address is incorrect for the specified network. |
+| `ROUTE_NOT_FOUND` | 404 | Route Not Found | The requested endpoint does not exist. Please refer to the hydric API reference for valid routes. |
+| `TOKEN_NOT_FOUND` | 404 | Not Found | The requested token could not be located. Ensure the token address and chain ID are correct. |
+| `UNKNOWN_ERROR` | 500 | Unknown Error | An internal server error occurred. Please try again later. |
+| `UNSUPPORTED_CHAIN_ID` | 400 | Invalid Parameters | hydric does not currently support or index the provided Chain ID |
+| `VALIDATION_ERROR` | 400 | Invalid Parameters | The request payload contains invalid data types or malformed parameters |
