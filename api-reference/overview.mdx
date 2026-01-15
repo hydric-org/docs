@@ -1,0 +1,50 @@
+---
+title: "API Reference"
+description: "Technical specifications and integration standards for the hydric Gateway API."
+---
+
+<Note>
+  **Private Beta:** hydric is currently accessible to a select group of
+  partners. To request access to our infrastructure, please reach out to our
+  [Engineering Support](mailto:support@hydric.org).
+</Note>
+
+The hydric Gateway API is a high-performance REST interface designed for deterministic access to normalized DeFi liquidity data. All endpoints are served over HTTPS and return standard JSON payloads.
+
+## Gateway URL
+
+The hydric Gateway API is globally distributed at:
+
+| Environment    | Base URL                    |
+| :------------- | :-------------------------- |
+| **Production** | `https://api.hydric.org/v1` |
+
+## Response Architecture
+
+Every request to the hydric Gateway Layer follows a consistent response structure. Our goal is to provide actionable intelligence that can be parsed safely in production environments.
+
+### Success Patterns
+
+All successful responses return a `200 OK` status. Data is always encapsulated in a top-level object to allow for future metadata expansion without breaking your integration.
+
+### Error Handling
+
+When a request cannot be fulfilled, hydric returns a structured error object. We provide deep context to ensure that your automated systems can handle failures gracefully.
+
+**Error Schema:**
+
+- **`status`**: The standard HTTP status code.
+- **`code`**: A machine-readable hydric-specific error string (e.g., `INSUFFICIENT_LIQUIDITY_DATA`).
+- **`message`**: A concise, human-readable summary of the issue.
+- **`details`**: Technical hints, suggestions, or stack-trace fragments to accelerate debugging.
+- **`metadata`**: Context-specific data, such as the specific input value that triggered a validation failure.
+
+For a complete mapping of error types and recovery strategies, see the [Error Codes](/api-reference/error-codes) documentation.
+
+## Implementation Rules
+
+To ensure system stability and fair access for all partners, the following rules apply to all Gateway interactions:
+
+- **Content Type:** All requests must include the `Content-Type: application/json` header.
+- **Rate Limiting:** Every API key is subject to a rate limit. Exceeding this limit will return a `429 Too Many Requests` error.
+- **Versioning:** The API is versioned via the URL (e.g., `/v1`). Breaking changes will never be introduced to an existing version.

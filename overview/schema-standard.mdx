@@ -1,0 +1,24 @@
+---
+title: "Schema Standard"
+description: "How we normalize heterogeneous DeFi state into predictable data models."
+---
+
+The hydric Schema is the technical realization of our **Primitive-Centric** vision. It is the fixed contract between our Gateway Layer and your application.
+
+By adhering to a strict schema standard, we ensure that your integration logic remains unchanged, regardless of the underlying protocol version or chain architecture.
+
+## Standard Principles
+
+- **Type Safety:** Every field is strictly typed and deterministic.
+- **Semantic Consistency:** A field named `totalValueLocked` or `yield` means the same thing in a V2 Pool as it does in a V4 Pool, as it does in a Lending Market.
+- **Explicit Units:** All numerical values are returned in standardized formats (e.g., USD-denominated values and raw BigInt strings for on-chain units).
+
+## Liquidity Pools Base Schema
+
+The hydric Liquidity Pool model is the standardized representation of the Exchange Primitive. Every pool indexed by hydric, from legacy V2 forks to V4 deployments, conforms to this unified structure.
+
+[View the Complete Field Specification →](/api-reference/data-models/liquidity-pool)
+
+### Why we use a Unified Schema
+
+By abstracting the underlying protocol nuances into a single contract, we allow your application to remain logic-agnostic while ensuring total data consistency.

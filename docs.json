@@ -1,122 +1,123 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
-  "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+  "name": "hydric",
+  "api": {
+    "examples": {
+      "prefill": true
+    }
   },
-  "favicon": "/favicon.svg",
+  "description": "The definitive guide to hydric API. Discover our multi-chain liquidity application and developer-first API. Your single point of access for DeFi data, token intelligence, and aggregated liquidity analytics across the blockchain ecosystem",
+  "fonts": {
+    "heading": {
+      "family": "GeneralSans",
+      "format": "woff2",
+      "weight": 600,
+      "source": "./brand/font/GeneralSans-Variable.woff2"
+    },
+    "body": {
+      "family": "GeneralSans",
+      "format": "woff2",
+      "weight": 500,
+      "source": "./brand/font/GeneralSans-Variable.woff2"
+    }
+  },
+  "icons": {
+    "library": "fontawesome"
+  },
+  "public": true,
+  "search": {
+    "prompt": "Search About hydric"
+  },
+  "logo": {
+    "light": "/brand/logotype-light.svg",
+    "dark": "/brand/logotype-dark.svg"
+  },
+  "background": {
+    "color": {
+      "dark": "#1D2123",
+      "light": "#F1F6F8"
+    }
+  },
+  "colors": {
+    "primary": "#5EC7FF",
+    "light": "#5EC7FF",
+    "dark": "#84D0F9"
+  },
+  "favicon": {
+    "light": "./brand/logo-light.svg",
+    "dark": "./brand/logo-dark.svg"
+  },
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Overview",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Learn about hydric",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "overview/what-is-hydric",
+              "overview/why-hydric",
+              "overview/architecture"
             ]
           },
           {
-            "group": "Customization",
+            "group": "System",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "overview/supported-blockchains",
+              "overview/primitives",
+              "overview/schema-standard"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "API Reference",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "About API",
             "pages": [
-              "api-reference/introduction"
+              "api-reference/overview",
+              {
+                "group": "Relevant Data Models",
+                "pages": [
+                  "api-reference/data-models/liquidity-pool",
+                  "api-reference/data-models/protocol",
+                  "api-reference/data-models/success-response",
+                  "api-reference/data-models/error-response"
+                ]
+              }
             ]
           },
           {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
+            "group": "General APIs",
+            "openapi": "https://api.hydric.org/v1/openapi.json"
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    ]
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@hydric.org"
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
+    ]
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+    "socials": {}
   }
 }

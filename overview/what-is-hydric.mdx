@@ -1,0 +1,115 @@
+---
+title: "What is hydric?"
+description: "A normalized data layer for accessing DeFi liquidity without protocol-specific expertise."
+---
+
+## Overview
+
+hydric is a **protocol-agnostic data layer** that provides normalized, derived, and queryable financial data across the DeFi ecosystem.
+
+It allows applications to interact with DeFi liquidity using a **single semantic model**, without needing to understand how individual protocols implement pools, lending markets, staking mechanisms, or yield calculations.
+
+hydric does not execute transactions, manage funds, or optimize strategies.  
+It provides the **data intelligence required** for those systems to operate reliably.
+
+## The Problem hydric Solves
+
+DeFi protocols expose state in fundamentally different ways.
+
+To integrate even a small set of protocols, teams must:
+
+- Decode protocol-specific smart contract logic
+- Reconstruct state from heterogeneous events
+- Implement custom math for yields, liquidity, and rates
+- Maintain protocol-specific indexers and assumptions
+
+This work scales linearly with each new integration and introduces hidden correctness risks.
+
+hydric removes this burden by centralizing protocol research, state reconstruction, and semantic normalization into a single system.
+
+## What hydric Provides
+
+hydric exposes DeFi liquidity through a **unified API and schema**, enabling applications to reason about financial primitives instead of protocol internals.
+
+### Unified Access Layer
+
+- One API to access liquidity data across chains, protocols, and versions
+- Consistent schemas for pools, lending markets, and staking positions
+- Protocol-agnostic identifiers and relationships
+
+### Normalized Financial Semantics
+
+hydric does not expose raw protocol state.
+
+Instead, it provides:
+
+- Normalized representations of liquidity, yield, and exposure
+- Derived metrics with documented assumptions
+- Comparable data across heterogeneous implementations
+
+A Uniswap V3 pool and a lending market may differ internally, but their liquidity and yield characteristics are expressed consistently at the data layer.
+
+## Supported Primitives
+
+### Liquidity Pools
+
+- Liquidity depth and utilization
+- Volume and fee-derived yield
+- Protocol-specific parameters required for safe interaction
+- Support for concentrated liquidity designs (e.g. V3, V4)
+
+### Lending & Credit _(Planned)_
+
+- Borrow and supply rates
+- Market utilization and health metrics
+- Collateral and liquidation parameters
+
+### Staking & Yield _(Planned)_
+
+- Normalized yield metrics
+- Entry and exit constraints
+- Vault-specific behavior abstracted into a standard model
+
+## The hydric Engine
+
+hydric is built as a deterministic data pipeline:
+
+1. **Ingest**  
+   Indexers track on-chain state directly from smart contracts, capturing authoritative protocol data.
+
+2. **Normalize**  
+   Protocol-specific events and state transitions are translated into the hydric Schema using defined rules and assumptions.
+
+3. **Serve**  
+   Data is exposed through a high-performance API, optimized for filtering, sorting, and composability.
+
+Derived values are reproducible from indexed state and documented logic.
+
+## What hydric Is Not
+
+To avoid ambiguity, hydric explicitly does **not**:
+
+- Execute transactions
+- Route orders or optimize strategies
+- Act as a price oracle
+- Manage wallets or user funds
+- Replace protocol governance or risk parameters
+
+hydric is infrastructure, not an execution or decision layer.
+
+## Intended Use
+
+hydric is designed for:
+
+- DeFi frontends and dashboards
+- Backend services integrating on-chain liquidity
+- Risk, analytics, and portfolio systems
+- Fintech and treasury platforms consuming DeFi data
+
+It is optimized for teams that want **reliable, comparable DeFi data** without maintaining protocol-specific infrastructure.
+
+## Goal
+
+hydric’s goal is to make DeFi liquidity **readable, comparable, and usable** through a single, consistent data model.
+
+When applications can reason about liquidity without protocol expertise, DeFi becomes infrastructure instead of research.

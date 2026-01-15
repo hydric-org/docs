@@ -1,0 +1,44 @@
+---
+title: "Primitives"
+description: "How hydric views the fundamental building blocks of DeFi."
+---
+
+DeFi is currently understood through its protocols, Uniswap, Curve, Aave, Morpho. At hydric, we believe this protocol-centric view is the primary barrier to integration.
+
+Our vision is to move the industry toward a **Primitive-Centric** model. We have distilled the entire ecosystem into three fundamental financial behaviors. These **hydric Primitives** serve as the standardized containers for all on-chain liquidity.
+
+### 1. Liquidity Pools (The Exchange Primitive) - **Available Now**
+
+The fundamental unit of decentralized exchange.
+
+Whether it is a Uniswap V4 hook-enabled pool, a Curve stable-swap, or an exotic CLMM, the core concept remains the same: a reservoir of liquidity with specific rules for access and reward. hydric treats every DEX implementation as an instance of this single primitive, allowing you to interact with the **concept of exchange** rather than the **code of a protocol.**
+
+### 2. Lending Markets (The Credit Primitive) - **In Development**
+
+The standardized containers for on-chain credit.
+
+Our vision is to normalize these markets so that the **behavior of credit** becomes transparent and comparable. We strip away protocol-specific jargon to expose the universal truths of supply, borrow, and risk across the entire ecosystem, regardless of the underlying debt model.
+
+### 3. Events & Transactions (The Activity Primitive) - **In Development**
+
+If Pools and Markets represent the "State" of DeFi, Events represent its "Life."
+
+We treat every on-chain interaction as a discrete economic signal. Our vision is to turn raw, heterogeneous event logs into a **Universal Stream of Activity**, allowing applications to monitor the pulse of DeFi without needing to decode the unique "language" of every individual smart contract.
+
+---
+
+## The Roadmap to Total Liquidity
+
+While our architecture is designed to eventually encompass every financial primitive in DeFi, we are launching with a deep, uncompromising focus on **Liquidity Pools**.
+
+Our goal is to provide the most comprehensive, normalized data layer for exchange liquidity before expanding our semantic model into Credit and Activity. By building with hydric today, you are integrating into a system designed to scale across the entire financial stack.
+
+---
+
+## The Power of the Primitive-Centric View
+
+By grouping DeFi into these primitives, we allow your application to interact with **Financial Logic** rather than **Implementation Details.**
+
+- **Universal Comparability:** Compare a V2 pool on Ethereum to a V4 pool on Base as if they were identical systems.
+- **Abstracted Complexity:** You don't need to study how a specific protocol calculates its state; you simply query the Primitive, and hydric handles the translation.
+- **Infinite Scalability:** When a new protocol or primitive launches, your integration stays the same; your access simply grows.

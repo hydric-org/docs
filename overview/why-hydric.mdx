@@ -1,0 +1,104 @@
+---
+title: "Why hydric Exists"
+description: "Removing the protocol-specific expertise required to work with DeFi liquidity."
+---
+
+## DeFi Has an Expertise Barrier
+
+DeFi liquidity is technically accessible, but **practically unusable without deep protocol-specific knowledge**.
+
+To integrate a single DeFi primitive today, an engineering team must:
+
+- Read and interpret complex smart contract state machines
+- Decode protocol-specific math (e.g. ticks, shares, indexes, health factors)
+- Reconcile inconsistent or incomplete subgraphs
+- Derive yields, rates, and liquidity metrics manually
+- Handle undocumented edge cases and protocol upgrades
+
+This work is repeated independently by every team, for every protocol.
+
+The result is an **Expertise Barrier**: access to DeFi liquidity is gated not by capital or demand, but by engineering research time.
+
+## The Fragmentation Cost
+
+DeFi does not have a shared semantic model.
+
+The same concept can mean different things depending on the protocol:
+
+- “Yield” may be APR, APY, realized, projected, or incentive-inflated
+- “Liquidity” may represent depth, TVL, available borrow, or active range
+- Identical user actions emit different events and require different state reconstruction
+
+Integrating multiple protocols compounds this cost linearly.
+Five protocols means five mental models, five data pipelines, and five sets of failure modes.
+
+This fragmentation slows development, increases risk, and forces teams to build infrastructure instead of products.
+
+## Why hydric Exists
+
+hydric exists to **remove protocol-specific expertise from the critical path** of building with DeFi liquidity.
+
+Instead of each application:
+
+- studying protocol internals
+- decoding events
+- deriving financial metrics
+- maintaining custom indexers
+
+hydric centralizes this work into a single, reusable system.
+
+We do the research once so it does not need to be repeated.
+
+## Semantics Matter More Than Aggregation
+
+hydric is not an aggregator of raw data.
+
+Aggregation alone does not solve the problem.  
+**Semantic normalization does.**
+
+hydric translates heterogeneous protocol state into a **unified financial model** with consistent meanings, assumptions, and structure.
+
+This allows applications to reason about:
+
+- liquidity
+- yield
+- risk
+- exposure
+
+without understanding how each protocol implements them internally.
+
+## What hydric Does (At a High Level)
+
+hydric provides a unified data layer that:
+
+- Indexes on-chain state directly from smart contracts
+- Normalizes protocol-specific logic into a shared schema
+- Exposes derived, opinionated financial metrics with explicit assumptions
+- Serves high-performance, queryable data through a single API
+
+hydric **does not execute transactions**, manage capital, or optimize strategies.
+It provides the data required for those systems to exist.
+
+## Design Principles
+
+hydric is built around a few non-negotiable principles:
+
+- **Normalization over raw exposure**  
+  Protocol differences are abstracted, not pushed downstream.
+
+- **Deterministic derivation**  
+  Derived values are reproducible from indexed state using defined rules.
+
+- **Explicit assumptions**  
+  Yield, liquidity, and rate calculations are opinionated and documented.
+
+- **Protocol-agnostic consumption**  
+  Applications interact with concepts, not implementations.
+
+## The Goal
+
+The goal of hydric is simple:
+
+> Make DeFi liquidity readable, comparable, and usable without protocol expertise.
+
+When that happens, DeFi stops being a research project and starts behaving like infrastructure.

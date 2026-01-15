@@ -1,0 +1,52 @@
+---
+title: "hydric Architecture"
+description: "An overview of the dual-layer infrastructure powering hydric."
+---
+
+hydric is a high-throughput data system designed to transform heterogeneous on-chain state into normalized, queryable financial intelligence.
+
+The architecture separates **state ingestion** from **data consumption**, ensuring that protocol-specific complexity is handled at the indexing level while exposing a stable, protocol-agnostic interface to applications.
+
+## 1. The Indexing Layer
+
+**Responsibility:** _On-chain data ingestion and protocol-specific state reconstruction._
+
+The Indexing Layer is the foundational "Brawn" of the system. It consumes raw blockchain data and reconstructs authoritative protocol states in real-time.
+
+- **Direct Contract Indexing:** Smart contract events and state transitions are indexed directly from the chain using [Envio](https://envio.dev).
+- **State Reconstruction:** Protocol-specific state (e.g., Uniswap V3 ticks, Aave reserve configurations) is derived from indexed data and persisted in a structured datastore.
+- **Protocol Adapters:** Each protocol version is handled by an isolated adapter responsible for decoding events, handling upgrades, and maintaining internal consistency.
+
+> **Note:** This layer is protocol-aware and implementation-specific. Its outputs are internal and not exposed directly to consumers.
+
+## 2. The Gateway Layer
+
+**Responsibility:** _Semantic normalization, metric derivation, and data delivery._
+
+The Gateway Layer is the "Brain" of hydric. It consumes reconstructed state and translates it into hydric’s **Unified Financial Model**.
+
+- **Primitive-Based Normalization:** Data is normalized by financial primitive (e.g., pools, lending markets), not by protocol. Different implementations of the same primitive conform to a shared, stable schema.
+- **Derived Metrics:** Higher-level metrics, such as rolling yields, utilization rates, and health factors, are computed using deterministic logic applied to the indexed state.
+- **Unified API Surface:** The Gateway represents the **Public Contract** of the system. It handles authentication, rate limiting, and high-concurrency access via REST and WebSockets.
+
+## Normalization by Financial Primitive
+
+hydric models DeFi through a discrete set of financial primitives. Protocol-specific behavior is abstracted within each primitive to ensure cross-protocol comparability.
+
+| Primitive           | Example Normalized Concepts                          | Example Use Cases                  |
+| :------------------ | :--------------------------------------------------- | :--------------------------------- |
+| **Liquidity Pools** | TVL, reserves, volume, fee-derived yield             | Dashboards, yield comparison       |
+| **Lending Markets** | Supply/borrow rates, utilization, collateral factors | Risk analysis, lending integration |
+| **Swaps & Events**  | Trade value, execution price, slippage               | Analytics, automation              |
+
+## Determinism and Consistency
+
+Data integrity is the core of the hydric mission. Every value served through our Gateway follows strict engineering principles:
+
+- **Reproducibility:** Metric calculations are deterministic with respect to indexed on-chain state.
+- **Correction Cycles:** Historical data may be backfilled or corrected as new information (or protocol upgrades) becomes available.
+- **Explicit Assumptions:** Calculations for yield and risk are opinionated and documented at the schema level to ensure transparency.
+
+## The Architectural Goal
+
+The goal of hydric is to allow applications to consume DeFi liquidity **without implementing or maintaining protocol-specific logic**, while preserving absolute correctness and comparability across the ecosystem.
