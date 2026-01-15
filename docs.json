@@ -119,6 +119,8 @@
     ]
   },
   "footer": {
-    "socials": {}
+    "socials": {
+      "github": "https://github.com/hydric-org"
+    }
   }
 }
