@@ -78,6 +78,7 @@
             "group": "About API",
             "pages": [
               "api-reference/overview",
+              "api-reference/error-codes",
               {
                 "group": "Relevant Data Models",
                 "pages": [

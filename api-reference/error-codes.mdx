@@ -1,12 +1,18 @@
 ---
 title: Error Codes
-description: Error codes for hydric API
+description: Exhaustive list of hydric error codes returned by the API
 ---
 
-## Error codes
+## API Status Codes
 
-Errors coming from hydric's API consists in key parts:
+The status codes returned by the API are the same as the HTTP status codes, like `200`, `400`, `500`, etc. [Don't know about http status codes?](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 
-- `code`: A unique code for the error
-- `message`: A human-readable message for the error
-- `status`: The HTTP status code for the error
+## Custom Error Codes by hydric
+
+for every error, hydric returns a custom code to make it easier to handle custom errors in your side. for example `LIQUIDITY_POOL_NOT_FOUND`.
+
+Below you can see the exhaustive list of hydric error codes:
+
+import CustomErrorCodes from "/snippets/custom-error-codes.mdx";
+
+<CustomErrorCodes />
