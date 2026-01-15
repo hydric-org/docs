@@ -84,7 +84,8 @@
                   "api-reference/data-models/liquidity-pool",
                   "api-reference/data-models/protocol",
                   "api-reference/data-models/success-response",
-                  "api-reference/data-models/error-response"
+                  "api-reference/data-models/error-response",
+                  "api-reference/data-models/single-chain-token"
                 ]
               }
             ]
