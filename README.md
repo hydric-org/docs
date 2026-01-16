@@ -1,44 +1,51 @@
-# Mintlify Starter Kit
+# Hydric Documentation
 
-Use the starter kit to get your docs deployed and ready to customize.
+### The Knowledge Layer for the Unified Financial Model
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+This repository houses the source of truth for **docs.hydric.org**. It contains the technical specifications, integration guides, and API references for the Hydric Gateway.
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+Powered by **Mintlify**.
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+---
 
-## Development
+## The Documentation Thesis
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
+Just like our API, our documentation follows strict engineering principles. It is not marketing material; it is a **Technical Contract**.
 
+1. **Precision over Fluff:** We do not use "marketing speak." We define fields by their data type, precision (e.g., Q64.96), and source.
+2. **Component-Driven:** We use shared snippets (e.g., `supported-blockchains.mdx`, `error-table.mdx`) to ensure that the docs never drift from the codebase.
+3. **Primitive-Based Organization:** Content is organized by Financial Primitive (Liquidity Pools, Lending, Staking), not by individual protocol, reflecting the Hydric normalization strategy.
+
+## Local Development
+
+### Prerequisites
+
+- **Mintlify CLI**
+
+### Installation
+
+```bash
+npm i -g mintlify
 ```
-npm i -g mint
+
+### Running Locally
+
+To preview the documentation with hot-reloading:
+
+```bash
+mintlify dev
 ```
 
-Run the following command at the root of your documentation, where your `docs.json` is located:
+The documentation will be available at http://localhost:3000.
 
-```
-mint dev
-```
+## Repository Structure
 
-View your local preview at `http://localhost:3000`.
+/api-reference
+The OpenAPI (Swagger) definitions and endpoint documentation.
+NOTE: Much of this is synced automatically from the Gateway DTOs.
 
-## Publishing changes
+/snippets
+Reusable MDX components (Error codes, Network lists) used to keep the docs DRY.
 
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
-
-## Need help?
-
-### Troubleshooting
-
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
-
-### Resources
-
-- [Mintlify documentation](https://mintlify.com/docs)
+docs.json
+The configuration file for navigation structure, visual theming, and redirects.
