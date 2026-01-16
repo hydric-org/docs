@@ -57,16 +57,22 @@
             "group": "Learn about hydric",
             "pages": [
               "overview/what-is-hydric",
-              "overview/why-hydric",
-              "overview/architecture"
+              "overview/why-hydric"
             ]
           },
           {
             "group": "System",
             "pages": [
-              "overview/supported-blockchains",
+              "overview/architecture",
               "overview/primitives",
               "overview/schema-standard"
+            ]
+          },
+          {
+            "group": "Coverage",
+            "pages": [
+              "overview/supported-blockchains",
+              "overview/supported-protocols"
             ]
           }
         ]
