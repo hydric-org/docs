@@ -64,7 +64,6 @@
           {
             "group": "System",
             "pages": [
-              "overview/supported-blockchains",
               "overview/primitives",
               "overview/schema-standard"
             ]
@@ -79,6 +78,7 @@
             "pages": [
               "api-reference/overview",
               "api-reference/error-codes",
+              "api-reference/supported-blockchains",
               {
                 "group": "Relevant Data Models",
                 "pages": [
@@ -92,7 +92,7 @@
             ]
           },
           {
-            "group": "General APIs",
+            "group": "General API",
             "openapi": "https://api.hydric.org/v1/openapi.json"
           }
         ]
