@@ -64,6 +64,7 @@
           {
             "group": "System",
             "pages": [
+              "overview/supported-blockchains",
               "overview/primitives",
               "overview/schema-standard"
             ]
@@ -78,7 +79,6 @@
             "pages": [
               "api-reference/overview",
               "api-reference/error-codes",
-              "api-reference/supported-blockchains",
               {
                 "group": "Relevant Data Models",
                 "pages": [
