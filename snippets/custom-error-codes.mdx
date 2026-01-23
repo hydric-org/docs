@@ -5,6 +5,7 @@
 | `API_KEY_DISABLED` | 403 | Authentication Failed | The provided API key exists but is disabled. |
 | `API_KEY_EXPIRED` | 403 | Authentication Failed | The provided API key exists but has expired. |
 | `API_KEY_INVALID` | 401 | Authentication Failed | The provided API key is invalid. |
+| `API_KEY_MISSING` | 401 | Authentication Failed | The request lacks an API key. Provide one in the Authorization header. |
 | `API_KEY_NOT_FOUND` | 401 | Authentication Failed | The provided API key does not exist. |
 | `INVALID_BLOCKCHAIN_ADDRESS` | 400 | Invalid Parameters | The provided blockchain identity (address/chain id pair) is malformed or refers to an unsupported network. |
 | `INVALID_PAGINATION_CURSOR` | 400 | Invalid Parameters | The pagination cursor is malformed or has expired. Request a new starting page to reset. |
