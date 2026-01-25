@@ -19,6 +19,61 @@ The hydric Gateway API is globally distributed at:
 | :------------- | :-------------------------- |
 | **Production** | `https://api.hydric.org/v1` |
 
+## Authentication
+
+hydric uses API keys to allow access to the API.
+
+### Usage
+
+To authenticate your requests, include your API key in the `Authorization` header as a Bearer token. This follows the standard pattern for secure API access.
+
+### Request Header Structure
+
+Authorization: `Bearer YOUR_API_KEY`
+
+### Example Request (cURL)
+
+```bash
+curl https://api.hydric.org/v1/protocols -H "Authorization: Bearer YOUR_API_KEY"
+```
+
+### Response Codes
+
+If your authentication fails, the API will return one of the following status codes to help you troubleshoot:
+
+#### 401 Unauthorized
+
+**Description:**  
+The API key is missing or malformed.
+
+**Solution:**  
+Verify that your header includes the `Bearer` prefix followed by a space and your key.
+
+#### 403 Forbidden
+
+**Description:**  
+The API key is valid, but the account lacks permission.
+
+**Solution:**  
+Check if your key has been deactivated or if you are attempting to access a restricted resource.
+
+### Best Practices & Security
+
+To keep your account and data safe, follow these guidelines:
+
+- **Keep Keys Private**  
+  Never include your API key in client-side code (browsers, mobile apps) or public repositories like GitHub.
+
+- **Use Environment Variables**  
+  Store your keys in `.env` files or secure secret management systems instead of hardcoding them.
+
+- **Rotate Regularly**  
+  If you suspect your key has been compromised, rotate it immediately.
+
+### Testing in the Documentation
+
+You can test endpoints directly in these docs. Click the **Try It** button on any endpoint page, paste your key into the authentication field, and see live results instantly.
+
 ## Supported Blockchains
 
 import SupportedLiquidityPoolsBlockchains from "/snippets/supported-blockchains/liquidity-pools.mdx";
