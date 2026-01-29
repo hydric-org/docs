@@ -1,4 +1,4 @@
-# Hydric Documentation
+# hydric Documentation
 
 ### The Knowledge Layer for the Unified Financial Model
 
