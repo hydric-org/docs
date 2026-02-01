@@ -111,7 +111,12 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:support@hydric.org"
+        "href": "mailto:support@hydric.org",
+        "icon": {
+          "library": "fontawesome",
+          "name": "envelope",
+          "style": "regular"
+        }
       }
     ]
   },
