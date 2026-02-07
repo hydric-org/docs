@@ -13,6 +13,7 @@
 | `INVALID_POOL_ADDRESS` | 400 | Invalid Parameters | The provided pool address is syntactically invalid or does not match the expected format for the target blockchain |
 | `INVALID_PROTOCOL_ID` | 400 | Invalid Parameters | The protocol identifier is not recognized. Protocol IDs must match the hydric slug format (e.g., uniswap-v3). |
 | `LIQUIDITY_POOL_NOT_FOUND` | 404 | Not Found | The requested liquidity pool could not be found. This may occur if the pool is not yet indexed or the address is incorrect for the specified network. |
+| `RATE_LIMIT_EXCEEDED` | 429 | Rate Limit Exceeded | You have exceeded the maximum number of requests allowed within the time window. Please wait and retry after the specified duration. |
 | `ROUTE_NOT_FOUND` | 404 | Route Not Found | The requested endpoint does not exist. Please refer to the hydric API reference for valid routes. |
 | `TOKEN_BASKET_NOT_FOUND` | 404 | Not Found | The requested token basket could not be found. |
 | `TOKEN_NOT_FOUND` | 404 | Not Found | The requested token could not be located. Ensure the token address and chain ID are correct. |
