@@ -1,0 +1,40 @@
+---
+title: "SDK Overview"
+description: "High-level technical overview of the hydric Gateway SDK architecture."
+---
+
+The hydric Gateway SDK is a lightweight wrapper for the [hydric Gateway API](https://api.hydric.org). It handles network requests, authentication, and response parsing, allowing you to focus on your application logic.
+
+## Architecture
+
+The SDK follows a **Resource-based pattern**, where functionality is grouped into logical modules accessible via the main `hydric` client.
+
+### Core Resources
+
+- **`multichainTokens`**: Aggregate data across all supported blockchains. Ideal for dashboards and cross-chain portfolio views.
+- **`singleChainTokens`**: Optimized for speed and targeted operations on a specific network.
+- **`tokenBaskets`**: Access curated lists of tokens maintained by the hydric team.
+
+## Supported Languages
+
+| Language            | Status                                              | Package                            |
+| :------------------ | :-------------------------------------------------- | :--------------------------------- |
+| **TypeScript / JS** | <Tooltip tip="Production Ready">✅ Stable</Tooltip> | `@hydric/gateway`                  |
+| **Python**          | <Tooltip tip="Coming Q3 2026">🕒 Planned</Tooltip>  | `hydric-gateway`                   |
+| **Go**              | <Tooltip tip="Coming Q4 2026">🕒 Planned</Tooltip>  | `github.com/hydric-org/gateway-go` |
+
+## Core Concepts
+
+### Authentication
+
+All requests require a valid API key. This key is set once during initialization and handled automatically by the client.
+
+### Error Handling
+
+The SDK uses specialized error classes (e.g., `HydricRateLimitError`, `HydricNotFoundError`) to help you handle failures gracefully without parsing string messages.
+
+### Versioning
+
+We follow strict Semantic Versioning (SemVer). Updates to the gateway API that require SDK changes will be released as new versions of the SDK to ensure stability for your production apps.
+
+---

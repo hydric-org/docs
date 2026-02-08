@@ -104,6 +104,34 @@
             "openapi": "https://api.hydric.org/v1/openapi.json"
           }
         ]
+      },
+      {
+        "tab": "SDK",
+        "groups": [
+          {
+            "group": "About SDK",
+            "pages": [
+              "sdk-reference/introduction",
+              "sdk-reference/overview"
+            ]
+          },
+          {
+            "group": "SDK Reference",
+            "pages": [
+              {
+                "group": "JS/TS",
+                "pages": [
+                  "sdk-reference/typescript/install",
+                  "sdk-reference/typescript/authentication",
+                  "sdk-reference/typescript/error-handling",
+                  "sdk-reference/typescript/multi-chain-tokens",
+                  "sdk-reference/typescript/single-chain-tokens",
+                  "sdk-reference/typescript/token-baskets"
+                ]
+              }
+            ]
+          }
+        ]
       }
     ]
   },
