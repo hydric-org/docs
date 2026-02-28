@@ -126,7 +126,8 @@
                   "sdk-reference/typescript/error-handling",
                   "sdk-reference/typescript/multi-chain-tokens",
                   "sdk-reference/typescript/single-chain-tokens",
-                  "sdk-reference/typescript/token-baskets"
+                  "sdk-reference/typescript/token-baskets",
+                  "sdk-reference/typescript/liquidity-pools"
                 ]
               }
             ]
